@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Captura de ejemplo del proyecto TaskApp">
+  <rect width="640" height="360" fill="#1F6FEB"/>
+  <rect x="60" y="60" width="520" height="240" rx="12" fill="#FFFFFF" opacity="0.95"/>
+  <rect x="90" y="95" width="30" height="30" rx="6" fill="#1F6FEB"/>
+  <path d="M 97 110 l 6 6 l 12 -12" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="140" y="100" width="260" height="20" rx="10" fill="#D0D7E2"/>
+  <rect x="90" y="145" width="30" height="30" rx="6" fill="#1F6FEB"/>
+  <path d="M 97 160 l 6 6 l 12 -12" stroke="#FFFFFF" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="140" y="150" width="200" height="20" rx="10" fill="#D0D7E2"/>
+  <rect x="90" y="195" width="30" height="30" rx="6" fill="#FFFFFF" stroke="#1F6FEB" stroke-width="3"/>
+  <rect x="140" y="200" width="300" height="20" rx="10" fill="#D0D7E2"/>
+  <text x="320" y="330" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">TaskApp</text>
+</svg>
