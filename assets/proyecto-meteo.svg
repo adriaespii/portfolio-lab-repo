@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="Captura de ejemplo del proyecto MeteoApp">
+  <rect width="640" height="360" fill="#0A4D8C"/>
+  <circle cx="480" cy="110" r="55" fill="#FFD43B"/>
+  <g fill="#FFFFFF" opacity="0.9">
+    <ellipse cx="220" cy="150" rx="90" ry="45"/>
+    <ellipse cx="290" cy="165" rx="70" ry="38"/>
+    <ellipse cx="160" cy="170" rx="60" ry="32"/>
+  </g>
+  <g stroke="#9CCBF2" stroke-width="8" stroke-linecap="round">
+    <line x1="170" y1="235" x2="155" y2="265"/>
+    <line x1="220" y1="240" x2="205" y2="270"/>
+    <line x1="270" y1="235" x2="255" y2="265"/>
+  </g>
+  <text x="320" y="330" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MeteoApp</text>
+</svg>
