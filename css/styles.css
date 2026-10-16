@@ -1,0 +1,325 @@
+/* ============================================================
+   Portfolio Web — Hoja de estilos (SPEC v1.1, R3)
+   ------------------------------------------------------------
+   Enfoque MOBILE-FIRST:
+   - Los estilos base están pensados para 360px de ancho.
+   - Los media queries min-width añaden mejoras hacia arriba
+     (tablet ~600px, desktop ~1024px).
+
+   Garantías del R3:
+   - Sin scroll horizontal a cualquier ancho (box-sizing,
+     max-width, imágenes fluidas y overflow controlado).
+   - Texto base legible sin zoom (16px mínimo en cuerpo).
+   - Enlaces y botones con área táctil cómoda (≥44px de alto
+     efectivo mediante padding y min-height).
+   - Imágenes fluidas: max-width: 100%; height: auto.
+   ============================================================ */
+
+/* ---------- Reset suave y base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Evita que el texto se reescale solo en algunos móviles. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  /* 16px mínimo en móvil = legible sin zoom (R3). */
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  color: #1f2933;
+  background-color: #f5f7fa;
+  /* Seguro extra contra scroll horizontal por contenido puntual. */
+  overflow-x: hidden;
+}
+
+/* Imágenes fluidas: nunca desbordan su contenedor (R3). */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+a {
+  color: #0b5fff;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Foco visible para navegación por teclado. */
+:focus-visible {
+  outline: 3px solid #0b5fff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- Layout general ---------- */
+
+/* Contenedor centrado con aire lateral en móvil. */
+.perfil,
+.proyectos {
+  width: 100%;
+  max-width: 72rem; /* ~1152px: aprovecha 1280px sin estirarse de más */
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+/* ---------- Perfil ---------- */
+
+.perfil {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.25rem;
+  background-color: #ffffff;
+}
+
+.perfil__foto {
+  width: 10rem;  /* 160px en móvil */
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #e8eef7;
+  flex-shrink: 0;
+}
+
+.perfil__info {
+  max-width: 40rem;
+}
+
+.perfil__nombre {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.perfil__rol {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #52606d;
+  margin-bottom: 0.75rem;
+}
+
+.perfil__bio {
+  margin-bottom: 0.75rem;
+}
+
+.perfil__ubicacion {
+  color: #52606d;
+  margin-bottom: 1rem;
+}
+
+/* Contacto: enlaces con área táctil cómoda (≥44px). */
+.perfil__contacto-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #cbd2d9;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-weight: 600;
+  /* El texto del enlace puede ser largo (email): que no desborde. */
+  overflow-wrap: anywhere;
+}
+
+.contacto:hover,
+.contacto:focus-visible {
+  background-color: #eef4ff;
+  text-decoration: none;
+}
+
+/* Mensaje de error de carga (SPEC §10). */
+.error-carga,
+.proyectos__error {
+  padding: 1rem;
+  border: 1px solid #f5c6c6;
+  border-radius: 8px;
+  background-color: #fdecec;
+  color: #9b1c1c;
+  font-weight: 600;
+}
+
+/* ---------- Proyectos ---------- */
+
+.proyectos {
+  padding-top: 2rem;
+}
+
+.proyectos h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Móvil: tarjetas apiladas en una columna. */
+.proyectos__lista {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.proyecto__tarjeta {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e4e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.proyecto__imagen {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: #e8eef7;
+}
+
+.proyecto__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.proyecto__titulo {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.proyecto__descripcion {
+  margin-bottom: 0;
+  color: #3e4c59;
+}
+
+.proyecto__tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.proyecto__tecnologias li {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background-color: #eef4ff;
+  color: #0b5fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Enlace "Ver en GitHub": área táctil ≥44px y pegado abajo. */
+.proyecto__enlace {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  margin-top: auto;
+  align-self: flex-start;
+  border-radius: 8px;
+  background-color: #0b5fff;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.proyecto__enlace:hover,
+.proyecto__enlace:focus-visible {
+  background-color: #0a4fd6;
+  text-decoration: none;
+}
+
+/* ============================================================
+   TABLET — desde ~600px
+   ============================================================ */
+@media (min-width: 37.5rem) {
+  .perfil,
+  .proyectos {
+    padding-inline: 1.5rem;
+  }
+
+  /* Contacto en fila cuando hay sitio. */
+  .perfil__contacto-lista {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Dos columnas de tarjetas si caben. */
+  .proyectos__lista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================================
+   DESKTOP — desde ~1024px
+   ============================================================ */
+@media (min-width: 64rem) {
+  .perfil {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 2.5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .perfil__foto {
+    width: 12.5rem; /* 200px en desktop */
+    height: 12.5rem;
+  }
+
+  .perfil__contacto-lista {
+    justify-content: flex-start;
+  }
+
+  .proyectos {
+    padding-top: 3rem;
+  }
+
+  /* Tres columnas aprovechando el ancho de 1280px. */
+  .proyectos__lista {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
