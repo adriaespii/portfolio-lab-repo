@@ -1,96 +1,61 @@
-# Portfolio Web
+# portfolio-lab
 
-Web personal tipo portfolio para prácticas en Arema Software. Muestra la foto, la información de contacto y los proyectos del alumno, cargados dinámicamente desde archivos JSON.
+Punto de partida de la formación **Construir productos con IA** (2 días).
 
-**URL pública:** https://adriaespii.github.io/portfolio-lab-repo/
+El proyecto vehículo es un **portfolio personal de desarrollador**. El objetivo no es el
+portfolio: es el proceso — agentes + specs + desarrollo + QA + cambios.
 
-## ¿Qué es?
+## Qué hay aquí
 
-Una página web estática (HTML + CSS + JavaScript, sin frameworks ni build) que:
+| Archivo / carpeta | Qué es |
+|---|---|
+| `requirements.md` | El encargo de la empresa. Es lo único que sabes del producto. |
+| `data/projects.json` | Los proyectos del perfil de ejemplo. |
+| `data/profile.json` | Los datos personales del perfil de ejemplo: quién es, foto, contacto. |
+| `assets/` | Las imágenes de los proyectos y la foto del perfil (`profile.jpg`). |
+| `design/DESIGN-001.md` | Sistema de diseño. **Ya está hecho y no se toca.** |
+| `specs/SPEC-001.md` | Vacía. La rellenas tú en el LAB 1. |
+| `tasks.md` | Vacía. La rellenas tú en el LAB 1. |
+| `agents/pm.md` | PM Agent, ya montado. Lo usas en el LAB 2. |
+| `agents/dev.md` | DEV Agent, ya montado. Lo usas en el LAB 3. |
+| `agents/qa.md` | QA Agent, ya montado. Lo usas en el LAB 4. |
+| `DEPLOY.md` | Cómo publicar tu portfolio en una URL. Al final del día 2. |
 
-- Muestra el perfil del alumno (foto, nombre, rol, bio, ubicación y contacto) desde `data/profile.json`.
-- Lista todos los proyectos desde `data/projects.json`, con imagen, descripción, tecnologías y enlace a GitHub (se abre en pestaña nueva).
-- Es responsive: usable y legible desde 360px de ancho hasta desktop, sin scroll horizontal.
-- Está desplegada en GitHub Pages con URL pública.
+**El producto va en la raíz del repositorio**: `index.html` y lo que necesite a su lado. No lo
+metas en una subcarpeta — así las rutas a `data/` y `assets/` funcionan tal cual, y publicarlo
+después es cuestión de dos clics.
 
-## Cómo personalizar tu portfolio (solo JSON + assets/)
+## Cómo se trabaja
 
-No necesitas tocar HTML, CSS ni JavaScript. Solo edita los archivos de datos y las imágenes:
+No editas este repo mientras trabajas: **trabajas dentro de Teros.ai**. Este repo es el punto de
+partida y el sitio donde queda el resultado.
 
-### 1. Edita tus datos personales
+1. Te descargas el repo al empezar el día 1.
+2. En cada lab, pegas en Teros.ai el contenido del archivo que toque.
+3. Trabajas allí: spec, agentes, implementación.
+4. Al cerrar el lab, vuelcas el resultado al archivo correspondiente de este repo.
 
-Abre `data/profile.json` y cambia los valores por los tuyos:
+Un único volcado al cerrar cada lab. No subas nada a mitad: el ida y vuelta cuesta más tiempo del
+que ahorra.
 
-```json
-{
-  "nombre": "Tu Nombre Apellido",
-  "rol": "Estudiante de DAW",
-  "bio": "Una breve presentación sobre ti.",
-  "foto": "assets/foto-perfil.svg",
-  "email": "tu.email@example.com",
-  "ubicacion": "Tu ciudad, País",
-  "linkedin": "https://www.linkedin.com/in/tu-usuario",
-  "github": "https://github.com/tu-usuario"
-}
-```
+## Versiones de la spec
 
-- `nombre`, `rol`, `bio`, `foto` y `email` son **obligatorios**.
-- `ubicacion`, `linkedin` y `github` son **opcionales**: si los dejas vacíos o los quitas, la web mostrará "No disponible".
-
-### 2. Edita tus proyectos
-
-Abre `data/projects.json` y añade, quita o modifica proyectos. Es un array: un objeto por proyecto.
-
-```json
-[
-  {
-    "titulo": "Mi proyecto",
-    "descripcion": "Qué hace el proyecto y qué aprendiste.",
-    "tecnologias": ["HTML", "CSS", "JavaScript"],
-    "github": "https://github.com/tu-usuario/mi-proyecto",
-    "imagen": "assets/mi-proyecto.png"
-  }
-]
-```
-
-- `titulo`, `descripcion`, `tecnologias` (mínimo 1) y `github` son **obligatorios**.
-- `imagen` es **opcional**: si falta o el archivo no carga, se muestra un placeholder genérico automáticamente.
-
-### 3. Sustituye las imágenes
-
-Mete tus imágenes en la carpeta `assets/` y referencia la ruta en los JSON:
-
-- `assets/foto-perfil.svg` → tu foto de perfil (cuadrada, se recorta en círculo).
-- `assets/proyecto-*.svg` → capturas de tus proyectos (proporción 16:9 recomendada).
-
-Puedes usar `.svg`, `.png`, `.jpg` o `.webp`. Asegúrate de que la ruta en el JSON coincide exactamente con el nombre del archivo.
-
-### 4. Publica los cambios
-
-Haz commit y push a la rama `main`. GitHub Pages actualiza la web automáticamente en unos segundos/minutos.
-
-```bash
-git add data/ assets/
-git commit -m "Personalizo mi portfolio"
-git push
-```
-
-## Estructura del repositorio
+Guarda **todas** las versiones de la spec, no solo la última:
 
 ```
-portfolio-lab-repo/
-├── index.html          ← estructura (no editar)
-├── css/styles.css      ← estilos (no editar)
-├── js/main.js          ← carga dinámica (no editar)
-├── data/
-│   ├── profile.json    ← ✏️ tus datos personales
-│   └── projects.json   ← ✏️ tus proyectos
-├── assets/             ← ✏️ tus imágenes
-└── docs/               ← SPEC del proyecto
+specs/
+├── SPEC-001-v0.md    ← LAB 1 · tu primera spec, antes del PM Agent
+├── SPEC-001-v1.md    ← LAB 2 · después de que el PM Agent la revise
+└── SPEC-001-v2.md    ← Día 2 · después del change request
 ```
 
-## Despliegue
+El repo con las tres versiones es el **entregable final**.
 
-Desplegado con **GitHub Pages** desde la rama `main`, carpeta raíz (`/`). La URL pública es:
+## Reglas de oro
 
-👉 **https://adriaespii.github.io/portfolio-lab-repo/**
+- El agente propone; el humano decide.
+- La SPEC es la referencia del desarrollo.
+- Si falta una decisión importante, se pregunta.
+- DEV no inventa requisitos.
+- QA no redefine el producto.
+- Cuando cambia el requisito, se actualiza primero la SPEC.
