@@ -1,29 +1,40 @@
-[
-  {
-    "titulo": "TaskApp — Gestor de tareas",
-    "descripcion": "Aplicación web para gestionar tareas diarias con listas, prioridades y fechas límite. Permite crear, editar, completar y eliminar tareas, con persistencia en el navegador mediante localStorage.",
-    "tecnologias": ["HTML", "CSS", "JavaScript"],
-    "github": "https://github.com/lucia-ferrer-ejemplo/taskapp",
-    "imagen": "assets/proyecto-taskapp.svg"
-  },
-  {
-    "titulo": "MeteoApp — Consulta del tiempo",
-    "descripcion": "Aplicación que muestra la previsión meteorológica de cualquier ciudad consumiendo una API pública. Incluye búsqueda de localidades, temperatura actual y previsión a cinco días.",
-    "tecnologias": ["JavaScript", "Fetch API", "CSS Grid"],
-    "github": "https://github.com/lucia-ferrer-ejemplo/meteoapp",
-    "imagen": "assets/proyecto-meteo.svg"
-  },
-  {
-    "titulo": "Recetario — Buscador de recetas",
-    "descripcion": "Buscador de recetas de cocina con filtrado por ingredientes y tipo de plato. Diseño responsive pensado para consultarse desde el móvil mientras se cocina.",
-    "tecnologias": ["HTML", "Sass", "JavaScript", "JSON"],
-    "github": "https://github.com/lucia-ferrer-ejemplo/recetario",
-    "imagen": "assets/proyecto-recetas.svg"
-  },
-  {
-    "titulo": "API Biblioteca — Servicio REST",
-    "descripcion": "API REST para la gestión de una biblioteca: altas, bajas y consultas de libros y préstamos. Proyecto de clase centrado en el diseño de endpoints y la validación de datos, sin interfaz gráfica.",
-    "tecnologias": ["Node.js", "Express"],
-    "github": "https://github.com/lucia-ferrer-ejemplo/api-biblioteca"
-  }
-]
+{
+  "proyectos": [
+    {
+      "id": "gestor-tareas",
+      "nombre": "Gestor de tareas Android",
+      "descripcion": "App para organizar las entregas por asignatura, con recordatorios. La usan 12 compañeros de clase desde marzo.",
+      "tecnologia": "Kotlin",
+      "imagen": "assets/project-01.jpg",
+      "enlace": "https://github.com/alex-ejemplo/gestor-tareas",
+      "fecha": "2026-05"
+    },
+    {
+      "id": "tienda-discos",
+      "nombre": "Tienda de discos",
+      "descripcion": "Catálogo con carrito para la tienda de un amigo que vendía por Instagram. 120 discos catalogados.",
+      "tecnologia": "JavaScript",
+      "imagen": "assets/project-02.jpg",
+      "enlace": "https://github.com/alex-ejemplo/tienda-discos",
+      "fecha": "2026-01"
+    },
+    {
+      "id": "api-reservas",
+      "nombre": "API de reservas",
+      "descripcion": "API REST para reservar pistas deportivas, con autenticación y documentación.",
+      "tecnologia": "Java",
+      "imagen": "assets/project-03.jpg",
+      "enlace": "https://github.com/alex-ejemplo/api-reservas",
+      "fecha": "2026-03"
+    },
+    {
+      "id": "recetas",
+      "nombre": "App de recetas",
+      "descripcion": "Recetario con lista de la compra compartida, sincronizada entre varios móviles.",
+      "tecnologia": "Flutter",
+      "imagen": "assets/project-04.jpg",
+      "enlace": "https://github.com/alex-ejemplo/recetas",
+      "fecha": "2025-06"
+    }
+  ]
+}
