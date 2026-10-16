@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Construir productos con IA</title>
+  <meta name="description" content="Portfolio personal de desarrollador. Proyecto del curso Construir productos con IA.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <header class="perfil" id="perfil">
+    <img
+      class="perfil__foto"
+      id="perfil-foto"
+      src="assets/placeholder.svg"
+      alt="Foto de perfil"
+      width="200"
+      height="200"
+    >
+    <div class="perfil__info">
+      <h1 class="perfil__nombre" id="perfil-nombre">Cargando…</h1>
+      <p class="perfil__rol" id="perfil-rol"></p>
+      <p class="perfil__bio" id="perfil-bio"></p>
+      <p class="perfil__ubicacion" id="perfil-ubicacion"></p>
+
+      <ul class="perfil__contacto-lista" aria-label="Enlaces de contacto">
+        <li>
+          <a class="contacto" id="contacto-email" href="#">Email</a>
+        </li>
+        <li>
+          <a class="contacto" id="contacto-linkedin" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </li>
+        <li>
+          <a class="contacto" id="contacto-github" href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="proyectos" id="proyectos" aria-labelledby="proyectos-titulo">
+      <h2 id="proyectos-titulo">Proyectos</h2>
+
+      <p class="proyectos__error" hidden>
+        No se pudieron cargar los datos.
+      </p>
+
+      <ul class="proyectos__lista" id="lista-proyectos" role="list">
+        <!-- Las tarjetas se generan con JS desde data/projects.json -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Plantilla de tarjeta de proyecto (clonada por JS) -->
+  <template id="plantilla-proyecto">
+    <li class="proyecto__tarjeta">
+      <img
+        class="proyecto__imagen"
+        src="assets/placeholder.svg"
+        alt="Imagen del proyecto"
+        width="640"
+        height="360"
+      >
+      <div class="proyecto__contenido">
+        <h3 class="proyecto__titulo"></h3>
+        <p class="proyecto__descripcion"></p>
+        <ul class="proyecto__tecnologias" aria-label="Tecnologías utilizadas"></ul>
+        <a
+          class="proyecto__enlace"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Ver en GitHub</a>
+      </div>
+    </li>
+  </template>
+
+</body>
+</html>
